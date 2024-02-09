@@ -20,10 +20,5 @@ return {
             -- default settings
         },
     },
-    -- Treesitter, update all
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
     { "folke/which-key.nvim", lazy = true},
 }
