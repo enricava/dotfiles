@@ -20,5 +20,4 @@ return {
             -- default settings
         },
     },
-    { "folke/which-key.nvim", lazy = true},
 }
