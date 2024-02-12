@@ -10,7 +10,7 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        "clangd",
+        "lua_ls",
     },
     handlers = {
         lsp_zero.default_setup,
@@ -20,12 +20,18 @@ require('mason-lspconfig').setup({
 -- Lua language server
 local lua_opts = lsp_zero.nvim_lua_ls()
 require('lspconfig').lua_ls.setup(lua_opts)
+require('lspconfig').clangd.setup(lua_opts)
 
 -- Keybindings
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+    -- Next two options for autoselection of first item
+    preselect = true,
+    completion = {
+        completeopt = 'menu,menuone,noinsert',
+    },
     mapping = cmp.mapping.preset.insert({
         -- `Enter` key to confirm completion
         ['<CR>'] = cmp.mapping.confirm({select = false}),
@@ -34,8 +40,8 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
 
         -- Navigate between snippet placeholder
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<Tab>'] = cmp_action.luasnip_jump_forward(),
+        ['<S-Tab>'] = cmp_action.luasnip_jump_backward(),
 
         -- Scroll up and down in the completion documentation
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
