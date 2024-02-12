@@ -1,9 +1,16 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
+    local map = require("ecavenr.keys").map
+
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
-    lsp_zero.default_keymaps({buffer = bufnr})
+
+    map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
+    map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
+    map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", "Code Format")
+
+    lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 -- Setup language servers
@@ -17,10 +24,12 @@ require('mason-lspconfig').setup({
     },
 })
 
--- Lua language server
+local lspconfig = require('lspconfig')
+
 local lua_opts = lsp_zero.nvim_lua_ls()
-require('lspconfig').lua_ls.setup(lua_opts)
-require('lspconfig').clangd.setup(lua_opts)
+
+lspconfig.lua_ls.setup(lua_opts)
+lspconfig.clangd.setup({})
 
 -- Keybindings
 local cmp = require('cmp')
@@ -34,7 +43,7 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- `Enter` key to confirm completion
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
