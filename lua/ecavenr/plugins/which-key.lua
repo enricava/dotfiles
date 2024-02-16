@@ -10,6 +10,7 @@ return {
                         g = { name = "Git" },
                         c = { name = "LSP Stuff" },
                         f = { name = "Telescope" },
+                        t = { name = "Trouble" },
                     },
                 }
             )
