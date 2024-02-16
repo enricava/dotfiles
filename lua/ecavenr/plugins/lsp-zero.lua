@@ -10,7 +10,7 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            {'hrsh7th/cmp-nvim-lsp'},
+            { 'hrsh7th/cmp-nvim-lsp' },
         },
         config = function()
             require("ecavenr.lspconfig")
@@ -20,7 +20,13 @@ return {
     {
         'hrsh7th/nvim-cmp',
         dependencies = {
-            {'L3MON4D3/LuaSnip'}
+            { 'L3MON4D3/LuaSnip' }
         },
+    },
+    {
+        'ray-x/lsp_signature.nvim',
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts) require 'lsp_signature'.setup(opts) end
     },
 }
