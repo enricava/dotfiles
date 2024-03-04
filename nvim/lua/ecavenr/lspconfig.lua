@@ -8,18 +8,20 @@ lsp_zero.on_attach(function(client, bufnr)
 
     map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
     map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
-    map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", "Code Format")
+    map("n", "<leader>cf", vim.lsp.buf.format, "Code Format")
+    map("v", "<leader>cf", vim.lsp.buf.format, "Code Format")
     map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
     map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
+    map("n", "gv", "<cmd>:vsplit | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
 
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 lsp_zero.set_sign_icons({
-  error = '',
-  warn = '',
-  hint = ' ',
-  info = '»'
+    error = '',
+    warn = '',
+    hint = ' ',
+    info = '»'
 })
 
 -- Setup language servers

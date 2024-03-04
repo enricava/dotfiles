@@ -11,6 +11,7 @@ return {
                         c = { name = "LSP Stuff" },
                         f = { name = "Telescope" },
                         t = { name = "Trouble" },
+                        e = { name = "Neotree" },
                     },
                 }
             )
