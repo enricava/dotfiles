@@ -41,6 +41,7 @@ local lua_opts = lsp_zero.nvim_lua_ls()
 
 lspconfig.lua_ls.setup(lua_opts)
 lspconfig.clangd.setup({})
+lspconfig.angularls.setup({})
 
 -- Keybindings
 local cmp = require('cmp')
