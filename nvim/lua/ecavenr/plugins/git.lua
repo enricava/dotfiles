@@ -16,6 +16,8 @@ return {
                     map("n", "<leader>ghD", function () gs.diffthis('~') end, "Diff with prev")
                     map('n', '<leader>ght', gs.toggle_current_line_blame, "Toggle current line blame")
                     map('n', '<leader>ghx', gs.toggle_deleted, "Toggle deleted")
+                    map('n', '<leader>gn', gs.next_hunk, "Next hunk")
+                    map('n', '<leader>gp', gs.prev_hunk, "Previus hunk")
                 end
             })
         end
