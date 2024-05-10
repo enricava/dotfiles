@@ -1,10 +1,30 @@
 return {
     {
-        -- Update all
         "nvim-treesitter/nvim-treesitter",
-        ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "vimdoc", "vim" },
-        auto_install = true,
         build = ":TSUpdate",
+        config = function()
+            local install = require("nvim-treesitter.install")
+            install.compilers = { "clang" }
+
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = {
+                    "c",
+                    "lua",
+                    "vim",
+                    "vimdoc",
+                    "query",
+                    "elixir",
+                    "heex",
+                    "javascript",
+                    "html",
+                    "rust"
+                },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end
     },
     {
         "nvim-treesitter/playground"
@@ -19,7 +39,7 @@ return {
         "numToStr/Comment.nvim",
         opts = {},
         lazy = false,
-        config = function ()
+        config = function()
             require('Comment').setup()
         end
     },
