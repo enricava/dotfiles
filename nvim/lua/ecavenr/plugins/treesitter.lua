@@ -23,4 +23,7 @@ return {
             require('Comment').setup()
         end
     },
+    {
+        "thirtythreeforty/lessspace.vim"
+    },
 }
