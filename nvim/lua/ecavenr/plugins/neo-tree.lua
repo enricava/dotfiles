@@ -13,8 +13,13 @@ return {
             local map = require("ecavenr.keys").map
             map(
                 { "n", "v" },
-                "<C-e>",
-                "<cmd>NeoTreeRevealToggle<cr>",
+                "<leader>ee",
+                function ()
+                    require('neo-tree.command').execute({
+                        toggle = true,
+                        position = 'right',
+                    })
+                end,
                 "Toggle file explorer"
             )
         end,
