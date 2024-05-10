@@ -23,6 +23,20 @@ return {
             { 'L3MON4D3/LuaSnip' }
         },
     },
+    -- Rust Crates
+    {
+        'saecki/crates.nvim',
+        tag = 'stable',
+        config = function()
+            require('crates').setup()
+        end,
+    }
+    -- Rust tools / LSP
+    -- {
+    --     'mrcjkb/rustaceanvim',
+    --     version = '^4', -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- }
     -- {
     --     'ray-x/lsp_signature.nvim',
     --     event = "VeryLazy",
