@@ -8,9 +8,19 @@ return {
         config = function()
             -- load colorscheme
             -- wave, dragon, lotus
-            -- require('kanagawa').setup({ transparent = true })
-            vim.cmd([[colorscheme kanagawa-lotus]])
-            -- vim.cmd([[colorscheme kanagawa-dragon]])
+            require('kanagawa').setup({
+                transparent = true,
+                colors = {
+                    theme = {
+                        all = {
+                            ui = {
+                                bg_gutter = "none"
+                            }
+                        }
+                    }
+                }
+            })
+            vim.cmd([[colorscheme kanagawa-wave]])
         end,
     },
 }
