@@ -9,9 +9,18 @@ lsp_zero.on_attach(function(client, bufnr)
     map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
     map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
     map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", "Code Format")
+    map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
+    map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
 
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
+
+lsp_zero.set_sign_icons({
+  error = '',
+  warn = '',
+  hint = ' ',
+  info = '»'
+})
 
 -- Setup language servers
 require('mason').setup({})
