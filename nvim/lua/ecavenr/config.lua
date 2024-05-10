@@ -19,5 +19,11 @@ vim.opt.scrolloff = 8
 
 vim.opt.colorcolumn = {120}
 
+-- Escape time fix
 vim.opt.updatetime = 50
 
+-- Folding
+vim.opt.fillchars = { fold = " " }
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
