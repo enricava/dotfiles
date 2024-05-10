@@ -46,5 +46,14 @@ return {
             map("n", "<leader>ga", "<cmd>Git add %<cr>", "Stage the current file")
             map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
         end
+    },
+    {
+        'sindrets/diffview.nvim',
+        config = function ()
+            local map = require('ecavenr.keys').map
+            map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>', 'Open diff view')
+            map('n', '<leader>gl', '<cmd>DiffviewFileHistory<cr>', 'Open file history view')
+            map('n', '<leader>gc', '<cmd>DiffviewClose<cr>', 'Close diff view')
+        end
     }
 }
