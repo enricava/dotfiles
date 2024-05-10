@@ -8,7 +8,9 @@ return {
                 {
                     ["<leader>"] = {
                         g = { name = "Git" },
-                    }
+                        c = { name = "LSP Stuff" },
+                        f = { name = "Telescope" },
+                    },
                 }
             )
         end

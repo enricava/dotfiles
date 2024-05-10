@@ -1,21 +1,23 @@
 return {
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("neo-tree").setup()
-			local map = require("helpers.keys").map
+    "nvim-lua/plenary.nvim",
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require("neo-tree").setup()
+            local map = require("ecavenr.keys").map
             map(
-				{ "n", "v" },
-				"<C-e>",
-				"<cmd>NeoTreeRevealToggle<cr>",
-				"Toggle file explorer"
-			)
-		end,
-	},
+                { "n", "v" },
+                "<C-e>",
+                "<cmd>NeoTreeRevealToggle<cr>",
+                "Toggle file explorer"
+            )
+        end,
+    },
+    --   {'akinsho/toggleterm.nvim', version = "*", config = true}
 }
