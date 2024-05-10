@@ -1,4 +1,5 @@
 return {
+    -- "P" to preview files
     "nvim-lua/plenary.nvim",
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -9,20 +10,24 @@ return {
             "MunifTanjim/nui.nvim",
         },
         config = function()
-            require("neo-tree").setup()
+            require("neo-tree").setup({
+                window = {
+                    position = "right"
+                },
+            })
             local map = require("ecavenr.keys").map
             map(
                 { "n", "v" },
                 "<leader>ee",
-                function ()
-                    require('neo-tree.command').execute({
+                function()
+                    require("neo-tree.command").execute({
                         toggle = true,
-                        position = 'right',
+                        position = "right",
                     })
                 end,
                 "Toggle file explorer"
             )
         end,
     },
-    --   {'akinsho/toggleterm.nvim', version = "*", config = true}
+    --   {"akinsho/toggleterm.nvim", version = "*", config = true}
 }

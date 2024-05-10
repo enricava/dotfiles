@@ -1,5 +1,5 @@
--- See current buffers at the top of the editor
 return {
+    -- See current buffers at the top of the editor
     {
         "akinsho/bufferline.nvim",
         version = "v3.*",
@@ -14,10 +14,11 @@ return {
         end
     },
 
+    -- Highlight similar words and current line
     {
         "yamatsum/nvim-cursorline",
         config = function()
-            require('nvim-cursorline').setup {
+            require("nvim-cursorline").setup {
                 cursorline = {
                     enable = true,
                     timeout = 1000,

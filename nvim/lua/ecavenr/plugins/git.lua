@@ -13,11 +13,11 @@ return {
                     map("n", "<leader>ghp", gs.preview_hunk, "Preview hunk")
                     map("n", "<leader>ghb", function() gs.blame_line { full = true } end, "Blame this")
                     map("n", "<leader>ghd", gs.diffthis, "Diff with")
-                    map("n", "<leader>ghD", function () gs.diffthis('~') end, "Diff with prev")
-                    map('n', '<leader>ght', gs.toggle_current_line_blame, "Toggle current line blame")
-                    map('n', '<leader>ghx', gs.toggle_deleted, "Toggle deleted")
-                    map('n', '<leader>gn', gs.next_hunk, "Next hunk")
-                    map('n', '<leader>gp', gs.prev_hunk, "Previus hunk")
+                    map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff with prev")
+                    map("n", "<leader>ght", gs.toggle_current_line_blame, "Toggle current line blame")
+                    map("n", "<leader>ghx", gs.toggle_deleted, "Toggle deleted")
+                    map("n", "<leader>gn", gs.next_hunk, "Next hunk")
+                    map("n", "<leader>gp", gs.prev_hunk, "Previus hunk")
                 end
             })
         end
@@ -48,12 +48,12 @@ return {
         end
     },
     {
-        'sindrets/diffview.nvim',
-        config = function ()
-            local map = require('ecavenr.keys').map
-            map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>', 'Open diff view')
-            map('n', '<leader>gl', '<cmd>DiffviewFileHistory<cr>', 'Open file history view')
-            map('n', '<leader>gc', '<cmd>DiffviewClose<cr>', 'Close diff view')
+        "sindrets/diffview.nvim",
+        config = function()
+            local map = require("ecavenr.keys").map
+            map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", "Open diff view")
+            map("n", "<leader>gl", "<cmd>DiffviewFileHistory<cr>", "Open file history view")
+            map("n", "<leader>gc", "<cmd>DiffviewClose<cr>", "Close diff view")
         end
     }
 }

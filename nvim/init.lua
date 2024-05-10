@@ -1,5 +1,1 @@
-
 require("ecavenr")
-
-
-print("hello")
