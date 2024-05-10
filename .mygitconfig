@@ -1,0 +1,6 @@
+[alias]
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | sort
+	slog = log --oneline
+	cram = commit --amend
+[core]
+	editor = nvim
