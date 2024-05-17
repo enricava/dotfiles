@@ -38,15 +38,7 @@ return {
             })
         end,
     },
-    {
-        "tpope/vim-fugitive",
-        config = function()
-            local map = require("ecavenr.keys").map
-            map("n", "<leader>gs", "<cmd>Git<cr>", "Status")
-            map("n", "<leader>ga", "<cmd>Git add %<cr>", "Stage the current file")
-            map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
-        end
-    },
+
     {
         "sindrets/diffview.nvim",
         config = function()
