@@ -22,6 +22,8 @@ return {
             })
         end
     },
+
+    -- Conflict resolution
     {
         "akinsho/git-conflict.nvim",
         commit = "2957f74",
@@ -39,6 +41,7 @@ return {
         end,
     },
 
+    -- Cool history view
     {
         "sindrets/diffview.nvim",
         config = function()
