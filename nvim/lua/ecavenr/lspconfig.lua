@@ -35,6 +35,7 @@ require('mason').setup({
 require('mason-lspconfig').setup({
     ensure_installed = {
         "bashls",
+        "clangd",
         "dockerls",
         "gopls",
         "helm_ls",
