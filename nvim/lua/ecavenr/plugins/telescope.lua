@@ -8,6 +8,7 @@ return {
         map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", "Live grep")
         map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Buffers")
         map("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "Help tags")
+        map("n", "<leader>fo", "<CMD>Telescope oldfiles<CR>", "Find recent files")
 
         -- LSP remaps
         map("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", "LSP References")
