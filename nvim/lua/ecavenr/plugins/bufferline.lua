@@ -2,7 +2,7 @@ return {
     -- See current buffers at the top of the editor
     {
         "akinsho/bufferline.nvim",
-        version = "v3.*",
+        version = "v4.*",
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = {},
         config = function()
