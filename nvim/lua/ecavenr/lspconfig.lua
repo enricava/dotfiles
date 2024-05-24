@@ -3,9 +3,6 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     local map = require("ecavenr.keys").map
 
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
-
     map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
     map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
     map("n", "<leader>cf", vim.lsp.buf.format, "Code Format")
@@ -17,6 +14,8 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
+
+-- Diagnostic icons
 lsp_zero.set_sign_icons({
     error = '',
     warn = '',
@@ -24,32 +23,66 @@ lsp_zero.set_sign_icons({
     info = '»'
 })
 
--- Setup language servers
-require('mason').setup({})
-require('mason-lspconfig').setup({
+
+-- Mason general
+require('mason').setup({
     ensure_installed = {
-        "lua_ls",
-    },
-    handlers = {
-        lsp_zero.default_setup,
+        "cpptools",
     },
 })
 
-local lspconfig = require('lspconfig')
+-- Setup language servers
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        "bashls",
+        "cmake",
+        "dockerls",
+        "gopls",
+        "helm_ls",
+        "html",
+        "jsonls",
+        "lua_ls",
+        "pylsp",
+        "ruff",
+        "rust_analyzer",
+        "tsserver",
+        -- "hls",
+        -- "java_language_server",
+        -- "markdown_oxide",
+        -- "sqls",
+    },
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end
+    },
+})
 
-local lua_opts = lsp_zero.nvim_lua_ls()
 
-lspconfig.lua_ls.setup(lua_opts)
-lspconfig.clangd.setup({})
-lspconfig.angularls.setup({})
-
--- Keybindings
+-- Configure autocompletion
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
+local cmp_action = lsp_zero.cmp_action()
 
 cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = "nvim_lsp_signature_help" },
+        { name = 'luasnip' },
+    },
     -- Next two options for autoselection of first item
     preselect = true,
+    -- window = {
+    --     -- completion = cmp.config.window.bordered(),
+    --     -- documentation = cmp.config.window.bordered(),
+    -- },
+    formatting = {
+        format = require('lspkind').cmp_format(),
+    },
+    snippet = {
+        expand = function(args)
+            require 'luasnip'.lsp_expand(args.body)
+        end
+    },
     completion = {
         completeopt = 'menu,menuone,noinsert',
     },
@@ -67,5 +100,5 @@ cmp.setup({
         -- Scroll up and down in the completion documentation
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    })
+    }),
 })
