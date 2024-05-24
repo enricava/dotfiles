@@ -25,11 +25,7 @@ lsp_zero.set_sign_icons({
 
 
 -- Mason general
-require('mason').setup({
-    ensure_installed = {
-        "cpptools",
-    },
-})
+require('mason').setup({})
 
 -- Setup language servers
 require('mason-lspconfig').setup({
