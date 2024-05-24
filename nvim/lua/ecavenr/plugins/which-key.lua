@@ -12,6 +12,7 @@ return {
                     f = { name = "Telescope" },
                     t = { name = "Trouble" },
                     e = { name = "Neotree" },
+                    d = { name = "Debug" },
                 },
             }
         )
