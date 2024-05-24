@@ -35,13 +35,13 @@ require('mason').setup({
 require('mason-lspconfig').setup({
     ensure_installed = {
         "bashls",
-        "cmake",
         "dockerls",
         "gopls",
         "helm_ls",
         "html",
         "jsonls",
         "lua_ls",
+        "neocmake",
         "pylsp",
         "ruff",
         "rust_analyzer",
