@@ -48,6 +48,9 @@ return {
             button.key_format = "  %s"
         end
 
+        -- Set background color for the text
+        vim.cmd[[hi DashboardHeader guifg=#d7af87]]
+
         -- close Lazy and re-open when the dashboard is ready
         if vim.o.filetype == "lazy" then
             vim.cmd.close()
