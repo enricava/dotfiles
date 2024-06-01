@@ -40,12 +40,12 @@ require('mason-lspconfig').setup({
         "lua_ls",
         "neocmake",
         "pylsp",
-        "ruff",
         "rust_analyzer",
         "tsserver",
         -- "hls",
         -- "java_language_server",
         -- "markdown_oxide",
+        -- "ruff",
         -- "sqls",
     },
     handlers = {
