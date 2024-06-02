@@ -20,3 +20,6 @@ map("i", "<C-s>", "<Esc>:w<CR>", "Save file")
 
 -- Exit with Alt+4
 map("n", "<A-4>", ":q<CR>", "Exit vim")
+
+-- Open Mason
+map("n", "<leader>m", "<cmd>:Mason<cr>", "Open Mason")
