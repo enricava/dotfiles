@@ -38,6 +38,7 @@ require('mason-lspconfig').setup({
         "html",
         "jsonls",
         "lua_ls",
+        "marksman",
         "neocmake",
         "pylsp",
         "rust_analyzer",
