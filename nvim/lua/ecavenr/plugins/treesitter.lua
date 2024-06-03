@@ -29,9 +29,6 @@ return {
             })
         end
     },
-    {
-        "nvim-treesitter/playground"
-    },
 
     -- Automatic pair closing
     {
