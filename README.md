@@ -13,7 +13,7 @@ ln -s ~/dotfiles/.mybashrc ~/.mybashrc
 
 In `~/.gitconfig`:
 
-```
+```md
 [include]
     path = dotfiles/.mygitconfig
 ```
