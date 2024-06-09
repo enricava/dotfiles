@@ -17,6 +17,9 @@ alias vim='nvim'
 alias python='python3'
 alias repo='cd ~/repos/enricava'
 
+# Share files over http
+alias share='ip a && python3 -m http.server'
+
 # =============================================================================
 # OTHER
 # =============================================================================
