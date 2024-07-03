@@ -9,7 +9,7 @@ lsp_zero.on_attach(function(client, bufnr)
     map("v", "<leader>cf", vim.lsp.buf.format, "Code Format")
     map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
     map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
-    map("n", "gv", "<cmd>:vsplit | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
+    map("n", "gv", "<cmd>:vsplit | wincmd w | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
 
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
