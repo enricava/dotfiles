@@ -28,10 +28,10 @@ return {
         -- stylua: ignore
         center = {
           { action = 'Telescope find_files', desc = " Find File", icon = " ", key = "f" },
+          { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "o" },
+          { action = "Telescope live_grep_args live_grep_args", desc = " Find Text", icon = " ", key = "g" },
           { action = 'SessionLoad', desc = " Restore Session", icon = " ", key = "s" },
           { action = "ene | startinsert", desc = " New File", icon = " ", key = "n" },
-          { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
-          { action = "Telescope live_grep", desc = " Find Text", icon = " ", key = "g" },
           { action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
           { action = "Mason", desc = " Mason", icon = " ", key = "m" },
           { action = "qa", desc = " Quit", icon = " ", key = "q" },
