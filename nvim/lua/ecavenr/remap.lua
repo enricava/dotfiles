@@ -23,3 +23,8 @@ map("n", "<A-4>", ":q<CR>", "Exit vim")
 
 -- Open Mason
 map("n", "<leader>m", "<cmd>:Mason<cr>", "Open Mason")
+
+-- Cycle buffers
+map("n", "<S-x>", "<CMD>bd<CR>", "Close current buffer")
+map("n", "<S-l>", "<CMD>bnext<CR>", "Next buffer/tab")
+map("n", "<S-h>", "<CMD>bprev<CR>", "Previous buffer/tab")
