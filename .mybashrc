@@ -10,6 +10,8 @@ eval "$(starship init bash)"
 # =============================================================================
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:~/go/bin"
+export PATH="$PATH:/usr/local/android-studio/bin"
+export PATH="$PATH:/usr/bin/flutter/bin"
 
 # =============================================================================
 # ALIASES
