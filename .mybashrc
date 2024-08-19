@@ -21,6 +21,9 @@ alias repo='cd ~/repos/enricava'
 # Share files over http
 alias share='ip a && python3 -m http.server'
 
+# Fzf helpers
+alias ff='fzf --preview="bat {} --color always" --preview-window=down'
+
 # =============================================================================
 # OTHER
 # =============================================================================
