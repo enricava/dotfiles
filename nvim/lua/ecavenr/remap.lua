@@ -11,6 +11,9 @@ map("n", "<C-j>", "<C-W>j", "Switch window down")
 map("n", "<C-k>", "<C-W>k", "Switch window up")
 map("n", "<C-l>", "<C-W>l", "Switch window right")
 
+-- Windowing
+map("n", "<leader>w", "<CMD>vsplit<CR><CMD>vsplit<CR>", "Split into 3 windows")
+
 -- Select all with Ctrl+A
 map("n", "<C-a>", "gg<S-v>G", "Select all")
 
