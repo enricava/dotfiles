@@ -61,6 +61,12 @@ require('mason-lspconfig').setup({
 local cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
 
+local luasnip = require('luasnip')
+luasnip.config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
+
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
@@ -86,17 +92,13 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- `Enter` key to confirm completion
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<Tab>'] = cmp.mapping.confirm({ select = false }),
 
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
 
         -- Navigate between snippet placeholder
-        ['<Tab>'] = cmp_action.luasnip_jump_forward(),
-        ['<S-Tab>'] = cmp_action.luasnip_jump_backward(),
-
-        -- Scroll up and down in the completion documentation
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        -- ['<Tab>'] = cmp_action.luasnip_jump_forward(),
+        -- ['<S-Tab>'] = cmp_action.luasnip_jump_backward(),
     }),
 })
