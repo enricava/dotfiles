@@ -4,5 +4,7 @@
 	slogall = log --oneline
   st = status
 	cram = commit --amend --no-edit
+  diffst = diff --staged
+  stdiff = diff --stat
 [core]
 	editor = nvim
