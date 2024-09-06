@@ -32,4 +32,7 @@ alias ff='fzf --preview="bat {} --color always" --preview-window=down'
 # =============================================================================
 # Rust shenanigans
 . "$HOME/.cargo/env"
+if [ -f /opt/nvim-linux64/bin/nvim ]; then
+    export EDITOR=/opt/nvim-linux64/bin/nvim
+fi
 
