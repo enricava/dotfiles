@@ -36,3 +36,9 @@ if [ -f /opt/nvim-linux64/bin/nvim ]; then
     export EDITOR=/opt/nvim-linux64/bin/nvim
 fi
 
+# =============================================================================
+# AUTOCOMPLETE
+# =============================================================================
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
