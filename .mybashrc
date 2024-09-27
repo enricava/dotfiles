@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export MY_REPOS="$HOME/repos/enricava"
+export DOTFILES="$HOME/dotfiles"
+
 # =============================================================================
 # PROMPT
 # =============================================================================
@@ -16,17 +19,25 @@ export PATH="$PATH:/usr/bin/flutter/bin"
 # =============================================================================
 # ALIASES
 # =============================================================================
+alias repo="cd $MY_REPOS"
+alias dotfiles="cd $DOTFILES"
+
 alias v='nvim'
 alias vim='nvim'
 alias python='python3'
-alias repo='cd ~/repos/enricava'
-alias mater='cd ~/repos/enricava/matermap'
 
 # Share files over http
 alias share='ip a && python3 -m http.server'
 
 # Fzf helpers
 alias ff='fzf --preview="bat {} --color always" --preview-window=down'
+
+# Tmux environments
+alias tmater=". $DOTFILES/scripts/tmux_startup.sh                             \
+  -n matermap                                                                 \
+  -mobile-app $MY_REPOS/matermap/mobile-app :                                \
+  -dotfiles   $DOTFILES                     :                                \
+  "
 
 # =============================================================================
 # OTHER
