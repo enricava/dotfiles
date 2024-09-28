@@ -13,6 +13,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
+$jobs\
 $line_break\
 $character"""
 
@@ -98,3 +99,9 @@ format = '[[  $time ](fg:color_fg0)]($style)'
 
 [line_break]
 disabled = false
+
+[jobs]
+style = "fg:color_orange"
+symbol = ' '
+number_threshold = 1
+symbol_threshold = 1
