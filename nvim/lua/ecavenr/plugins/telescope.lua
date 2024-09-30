@@ -35,6 +35,10 @@ return {
       map("n", "<leader>fd", "<CMD>Telescope lsp_definitions<CR>", "LSP Definitions")
       map("n", "<leader>fw", "<CMD>Telescope lsp_workspace_symbols<CR>", "LSP Workspace symbols")
 
+      local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+      map("v", "<leader>fc", live_grep_args_shortcuts.grep_visual_selection, "Live grep visual selection (with args)")
+      map("n", "<leader>fc", live_grep_args_shortcuts.grep_word_under_cursor, "Live grep word (with args)")
+
       -- Telescope extensions
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('live_grep_args')
