@@ -25,7 +25,7 @@ return {
       local map = require("ecavenr.keys").map
       map(
         { "n", "v" },
-        "<leader>ee",
+        "<leader>e",
         function()
           require("neo-tree.command").execute({
             toggle = true,
