@@ -21,5 +21,13 @@ return {
             -- Configuration here, or leave empty to use defaults
         })
     end
-}
+  },
+
+  -- Better marks
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+  }
+
 }
