@@ -28,6 +28,19 @@ return {
     "chentoast/marks.nvim",
     event = "VeryLazy",
     opts = {},
-  }
+  },
+
+  -- Vertical lines on indents
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    config = function()
+      require("ibl").setup({
+        indent = {char = "|"}
+      })
+    end
+  },
+
 
 }
