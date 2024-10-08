@@ -10,7 +10,12 @@ return {
                 section_separators = { left = "", right = "" },
                 disabled_filetypes = {
                     statusline = {},
-                    winbar = {},
+                    winbar = {
+                        -- Do not mess with dap ui
+                        "dapui_watches", "dapui_breakpoints",
+                        "dapui_scopes", "dapui_console",
+                        "dapui_stacks", "dap-repl"
+                    },
                 },
                 ignore_focus = {},
                 always_divide_middle = true,
@@ -40,17 +45,17 @@ return {
             tabline = {},
 
             winbar = {
-              lualine_a = { {"filename", separator = { left = ''}} },
-              lualine_b = { {"filetype", separator = {} }, {"progress", separator = { right = ''}}},
-              lualine_c = { },
+              lualine_a = {},
+              lualine_b = {},
+              lualine_c = {},
               lualine_x = {},
               lualine_y = {},
               lualine_z = {}
             },
 
             inactive_winbar = {
-              lualine_a = { "filename" },
-              lualine_b = { "filetype"},
+              lualine_a = {},
+              lualine_b = {},
               lualine_c = {},
               lualine_x = {},
               lualine_y = {},
