@@ -9,6 +9,12 @@ return {
 
     config = function()
       require("telescope").setup({
+        defaults = {
+          cache_picker = {
+            num_pickers = 4,
+            ignore_empty_prompt = true,
+          },
+        },
         extensions = {
           fzf = {
             fuzzy = true,             -- false will only do exact matching
@@ -23,20 +29,25 @@ return {
       local map = require("ecavenr.keys").map
 
       -- Telescope mappings
-      map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", "Find all files")
-      map("n", "<leader>fg", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
+      map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", "Find files")
+      map("n", "<leader>fg", "<CMD>Telescope git_files<CR>", "Find in git files")
       map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Buffers")
-      map("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "Help tags")
+
+      map("n", "<C-g>", "<CMD>Telescope find_files<CR>", "Find all files")
+      map("n", "<C-f>", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
+
       map("n", "<leader>fo", "<CMD>Telescope oldfiles<CR>", "Find recent files")
       map("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", "Show flutter commands")
 
+      map("n", "<leader>cc", "<CMD>Telescope colorscheme<CR>", "Change colorscheme")
+
+      map("n", "<leader>fh", "<CMD>Telescope pickers<CR>", "Telescope pickers")
+
       -- LSP remaps
       map("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", "LSP References")
-      map("n", "<leader>fd", "<CMD>Telescope lsp_definitions<CR>", "LSP Definitions")
-      map("n", "<leader>fw", "<CMD>Telescope lsp_workspace_symbols<CR>", "LSP Workspace symbols")
 
       local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
-      map("v", "<leader>fc", live_grep_args_shortcuts.grep_visual_selection, "Live grep visual selection (with args)")
+      map("v", "<C-f>", live_grep_args_shortcuts.grep_visual_selection, "Live grep visual selection (with args)")
       map("n", "<leader>fc", live_grep_args_shortcuts.grep_word_under_cursor, "Live grep word (with args)")
 
       -- Telescope extensions
