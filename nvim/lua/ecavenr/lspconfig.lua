@@ -26,17 +26,17 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     "bashls",
-    "clangd",
+    -- "clangd",
     "dockerls",
-    "gopls",
+    -- "gopls",
     "helm_ls",
     "html",
     "jsonls",
     "lua_ls",
     "marksman",
-    "neocmake",
+    -- "neocmake",
     "pylsp",
-    "rust_analyzer",
+    -- "rust_analyzer",
   },
   handlers = {
     function(server_name)
@@ -44,6 +44,12 @@ require('mason-lspconfig').setup({
     end
   },
 })
+
+-- Additional local lsp
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup({})
+lspconfig.gopls.setup({})
+lspconfig.rust_analyzer.setup({})
 
 
 -- Configure autocompletion
