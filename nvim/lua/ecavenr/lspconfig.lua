@@ -42,7 +42,6 @@ require('mason-lspconfig').setup({
         "neocmake",
         "pylsp",
         "rust_analyzer",
-        "tsserver",
         -- "hls",
         -- "java_language_server",
         -- "markdown_oxide",
