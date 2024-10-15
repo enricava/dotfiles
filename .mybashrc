@@ -35,7 +35,9 @@ alias ff='fzf --preview="bat {} --color always" --preview-window=down'
 # Tmux environments
 alias tmater=". $DOTFILES/scripts/tmux_startup.sh                             \
   -n matermap                                                                 \
-  -mobile-app $MY_REPOS/matermap/mobile-app :                                \
+  -matermap $MY_REPOS/matermap/mobile-app :                                  \
+  -materpet $MY_REPOS/matermap/materpet :                                    \
+  -core-utils $MY_REPOS/matermap/core-utils :                                \
   -dotfiles   $DOTFILES                     :                                \
   "
 
