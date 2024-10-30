@@ -97,7 +97,7 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
 
         -- Navigate between snippet placeholder
-        -- ['<Tab>'] = cmp_action.luasnip_jump_forward(),
-        -- ['<S-Tab>'] = cmp_action.luasnip_jump_backward(),
+        ['<PageDown>'] = cmp_action.luasnip_jump_forward(),
+        ['<PageUp>'] = cmp_action.luasnip_jump_backward(),
     }),
 })
