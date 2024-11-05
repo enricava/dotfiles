@@ -1,10 +1,10 @@
 [alias]
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | sort
-	slog = log --oneline -n 10
-	slogall = log --oneline
-  st = status
+  br = branch
 	cram = commit --amend --no-edit
   diffst = diff --staged
-  stdiff = diff --stat
+	slog = log --oneline -n 10
+  st = status
+  sw = switch
 [core]
 	editor = nvim
