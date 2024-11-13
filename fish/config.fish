@@ -8,6 +8,9 @@ fish_add_path /usr/bin/flutter/bin
 fish_add_path $HOME/go/bin
 
 if status is-interactive
+    alias l "ls -la"
+    alias ll "ls -la"
+
     alias dotfiles "cd $DOTFILES"
     alias myrepos "cd $MY_REPOS"
 
