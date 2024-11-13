@@ -6,8 +6,11 @@ fish_add_path /opt/nvim-linux64/bin
 fish_add_path /usr/local/android-studio/bin
 fish_add_path /usr/bin/flutter/bin
 fish_add_path $HOME/go/bin
+fish_add_path $HOME/.cargo/bin
 
 if status is-interactive
+    set -gx EDITOR nvim
+
     alias l "ls -la"
     alias ll "ls -la"
 
