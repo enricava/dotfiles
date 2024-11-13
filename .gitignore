@@ -1,3 +1,8 @@
 *.json
 
 yazi/flavors
+
+# Fish
+fish/fish_history
+fish/fishd.*
+fish/fish_variables
