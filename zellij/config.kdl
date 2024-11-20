@@ -159,7 +159,7 @@ keybinds clear-defaults=true {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Esc" { SwitchToMode "Locked"; }
+        bind "Esc" "Alt `" { SwitchToMode "Locked"; }
         bind "Alt q" { Quit; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
@@ -175,7 +175,7 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
     }
     shared_except "normal" "locked" {
-        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+        bind "Enter" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
         bind "Alt p" { SwitchToMode "Pane"; }
