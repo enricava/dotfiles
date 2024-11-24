@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ','
 
 -- Custom remaps
 local map = require("ecavenr.keys").map
@@ -28,3 +29,4 @@ map("n", "<leader>m", "<cmd>:Mason<cr>", "Open Mason")
 map("n", "<S-x>", "<CMD>bd<CR>", "Close current buffer")
 map("n", "<S-l>", "<CMD>bnext<CR>", "Next buffer/tab")
 map("n", "<S-h>", "<CMD>bprev<CR>", "Previous buffer/tab")
+map("n", "<S-c>", ":%bd|e#|bd#<CR>", "Close all other buffers")

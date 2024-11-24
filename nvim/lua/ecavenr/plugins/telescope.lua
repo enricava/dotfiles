@@ -32,8 +32,8 @@ return {
       map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", "Find files")
       map("n", "<leader>fg", "<CMD>Telescope git_files<CR>", "Find in git files")
       map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Buffers")
+      map("n", "<leader>fa", "<CMD>Telescope find_files<CR>", "Find all files")
 
-      map("n", "<C-g>", "<CMD>Telescope find_files<CR>", "Find all files")
       map("n", "<C-f>", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
 
       map("n", "<leader>fo", "<CMD>Telescope oldfiles<CR>", "Find recent files")
