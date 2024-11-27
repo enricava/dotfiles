@@ -13,6 +13,7 @@ set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PR
 
 if status is-interactive
     set -gx EDITOR nvim
+    set -gx DCMAKE_EXPORT_COMPILE_COMMANDS ON
 
     alias l "ls -la"
     alias ll "ls -la"
