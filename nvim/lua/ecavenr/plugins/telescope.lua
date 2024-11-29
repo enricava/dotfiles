@@ -1,7 +1,11 @@
 return {
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+  { 'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
+    event = "VeryLazy",
+  },
   {
     "nvim-telescope/telescope.nvim",
+    event = "VeryLazy",
 
     dependencies = {
       "nvim-telescope/telescope-live-grep-args.nvim" ,

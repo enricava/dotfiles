@@ -2,6 +2,7 @@ return {
   -- Debug Adapter
   {
     "mfussenegger/nvim-dap",
+    event = "VeryLazy",
     config = function()
       require('ecavenr.dapconfig')
     end
@@ -15,6 +16,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
+
     },
     opts = {
       handlers = {},

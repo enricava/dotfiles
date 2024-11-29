@@ -1,6 +1,7 @@
 return {
   {
     "petertriho/nvim-scrollbar",
+    event = "VeryLazy",
     dependencies = {
       "nvim-telescope/telescope.nvim",
     },

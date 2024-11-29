@@ -1,5 +1,6 @@
 return {
   'sindrets/winshift.nvim',
+  event = "VeryLazy",
   config = function()
     require('winshift').setup({
       keymaps = {

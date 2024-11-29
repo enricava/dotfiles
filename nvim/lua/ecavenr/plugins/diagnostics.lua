@@ -1,6 +1,7 @@
 -- Show diagnostics in new window
 return {
   "folke/trouble.nvim",
+  envent = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     -- default settings
