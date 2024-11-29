@@ -9,6 +9,7 @@ return {
     },
     {
         'neovim/nvim-lspconfig',
+        event = 'VeryLazy',
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
         },
@@ -19,6 +20,7 @@ return {
     -- Autocompletion
     {
         'hrsh7th/nvim-cmp',
+        event = 'VeryLazy',
         dependencies = {
             {
                 'L3MON4D3/LuaSnip',
@@ -30,6 +32,7 @@ return {
     -- Rust Crates
     {
         'saecki/crates.nvim',
+        event = 'VeryLazy',
         tag = 'stable',
         config = function()
             require('crates').setup()
@@ -38,6 +41,7 @@ return {
     -- Lua development
     {
         "folke/lazydev.nvim",
+        event = 'VeryLazy',
         ft = "lua", -- only load on lua files
         opts = {
             library = {
