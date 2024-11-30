@@ -1,58 +1,57 @@
+local map = require("ecavenr.keys").map
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
-    local map = require("ecavenr.keys").map
+local lsp_attach = function(client, bufnr)
+  map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
+  map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
+  map("n", "<leader>cf", vim.lsp.buf.format, "Code Format")
+  map("v", "<leader>cf", vim.lsp.buf.format, "Code Format")
+  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
+  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
+  map("n", "gv", "<cmd>:vsplit | wincmd w | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
 
-    map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
-    map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
-    map("n", "<leader>cf", vim.lsp.buf.format, "Code Format")
-    map("v", "<leader>cf", vim.lsp.buf.format, "Code Format")
-    map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
-    map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
-    map("n", "gv", "<cmd>:vsplit | wincmd w | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
+  lsp_zero.default_keymaps({ buffer = bufnr })
+end
 
-    lsp_zero.default_keymaps({ buffer = bufnr })
-end)
-
+lsp_zero.extend_lspconfig({
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  lsp_attach = lsp_attach,
+  float_border = 'rounded',
+  sign_text = true,
+})
 
 -- Diagnostic icons
 lsp_zero.set_sign_icons({
-    error = '',
-    warn = '',
-    hint = ' ',
-    info = '»'
+  error = '',
+  warn = '',
+  hint = ' ',
+  info = '»',
 })
 
-
--- Mason general
+-- Mason
 require('mason').setup({})
 
 -- Setup language servers
 require('mason-lspconfig').setup({
-    ensure_installed = {
-        "bashls",
-        "clangd",
-        "dockerls",
-        "gopls",
-        "helm_ls",
-        "html",
-        "jsonls",
-        "lua_ls",
-        "marksman",
-        "neocmake",
-        "pylsp",
-        "rust_analyzer",
-        -- "hls",
-        -- "java_language_server",
-        -- "markdown_oxide",
-        -- "ruff",
-        -- "sqls",
-    },
-    handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
-        end
-    },
+  ensure_installed = {
+    "bashls",
+    "clangd",
+    "dockerls",
+    "gopls",
+    "helm_ls",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "marksman",
+    "neocmake",
+    "pylsp",
+    "rust_analyzer",
+  },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end
+  },
 })
 
 
@@ -67,37 +66,38 @@ luasnip.config.set_config({
 })
 
 cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = "nvim_lsp_signature_help" },
-        { name = 'luasnip' },
-    },
-    -- Next two options for autoselection of first item
-    preselect = true,
-    -- window = {
-    --     -- completion = cmp.config.window.bordered(),
-    --     -- documentation = cmp.config.window.bordered(),
-    -- },
-    formatting = {
-        format = require('lspkind').cmp_format(),
-    },
-    snippet = {
-        expand = function(args)
-            require 'luasnip'.lsp_expand(args.body)
-        end
-    },
-    completion = {
-        completeopt = 'menu,menuone,noinsert',
-    },
-    mapping = cmp.mapping.preset.insert({
-        -- `Enter` key to confirm completion
-        ['<Tab>'] = cmp.mapping.confirm({ select = false }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = "nvim_lsp_signature_help" },
+    { name = 'luasnip' },
+  },
+  -- Next two options for autoselection of first item
+  preselect = true,
+  -- Options for completion window
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  formatting = {
+    format = require('lspkind').cmp_format(),
+  },
+  snippet = {
+    expand = function(args)
+      require 'luasnip'.lsp_expand(args.body)
+    end
+  },
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
+  mapping = cmp.mapping.preset.insert({
+    -- `Enter` key to confirm completion
+    ['<Tab>'] = cmp.mapping.confirm({ select = false }),
 
-        -- Ctrl+Space to trigger completion menu
-        ['<C-Space>'] = cmp.mapping.complete(),
+    -- Ctrl+Space to trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
 
-        -- Navigate between snippet placeholder
-        ['<PageDown>'] = cmp_action.luasnip_jump_forward(),
-        ['<PageUp>'] = cmp_action.luasnip_jump_backward(),
-    }),
+    -- Navigate between snippet placeholder
+    ['<PageDown>'] = cmp_action.luasnip_jump_forward(),
+    ['<PageUp>'] = cmp_action.luasnip_jump_backward(),
+  }),
 })

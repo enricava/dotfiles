@@ -3,7 +3,7 @@ return {
     { 'williamboman/mason-lspconfig.nvim' },
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v4.x',
         lazy = true,
         config = false,
     },
