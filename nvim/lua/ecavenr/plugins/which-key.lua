@@ -1,4 +1,3 @@
--- Map help
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",

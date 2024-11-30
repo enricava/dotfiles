@@ -1,3 +1,5 @@
+local map = require("ecavenr.keys").map
+
 return {
   { 'nvim-telescope/telescope-fzf-native.nvim',
     build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
@@ -13,6 +15,11 @@ return {
 
     config = function()
       require("telescope").setup({
+        pickers = {
+          colorscheme = {
+            enable_preview = true,
+          },
+        },
         defaults = {
           cache_picker = {
             num_pickers = 4,
@@ -29,28 +36,19 @@ return {
           }
         }
       })
-
-      local map = require("ecavenr.keys").map
-
       -- Telescope mappings
       map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", "Find files")
       map("n", "<leader>fg", "<CMD>Telescope git_files<CR>", "Find in git files")
       map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Buffers")
       map("n", "<leader>fa", "<CMD>Telescope find_files<CR>", "Find all files")
-
-      map("n", "<C-f>", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
-
       map("n", "<leader>fo", "<CMD>Telescope oldfiles<CR>", "Find recent files")
       map("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", "Show flutter commands")
-
+      map("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", "LSP References")
       map("n", "<leader>cc", "<CMD>Telescope colorscheme<CR>", "Change colorscheme")
 
-      map("n", "<leader>fh", "<CMD>Telescope pickers<CR>", "Telescope pickers")
-
-      -- LSP remaps
-      map("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", "LSP References")
-
+      -- Live grep args
       local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+      map("n", "<C-f>", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
       map("v", "<C-f>", live_grep_args_shortcuts.grep_visual_selection, "Live grep visual selection (with args)")
       map("n", "<leader>fc", live_grep_args_shortcuts.grep_word_under_cursor, "Live grep word (with args)")
 
@@ -67,8 +65,6 @@ return {
     opts = {},
     config = function()
       require("todo-comments").setup()
-      local map = require("ecavenr.keys").map
-
       map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", "Find todos")
     end
   }

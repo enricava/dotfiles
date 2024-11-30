@@ -1,22 +1,20 @@
 return {
   -- See current buffers at the top of the editor
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   version = "v4.*",
-  --   dependencies = "nvim-tree/nvim-web-devicons",
-  --   config = function()
-  --     require("bufferline").setup({
-  --       options = {
-  --         -- mode = "tabs",
-  --         -- show_buffer_close_icons = false,
-  --         -- show_close_icon = false,
-  --         diagnostics = "nvim_lsp",
-  --         separator_style = { "", "" }
-  --       },
-  --     })
-  --
-  --   end
-  -- },
+  {
+    "akinsho/bufferline.nvim",
+    version = "v4.*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("bufferline").setup({
+        options = {
+          diagnostics = "nvim_lsp",
+          buffer_close_icon = '',
+          separator_style = { '', '' },
+          tab_size = 3,
+        },
+      })
+    end
+  },
 
   -- Highlight similar words and current line
   {

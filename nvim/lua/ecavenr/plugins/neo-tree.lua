@@ -15,7 +15,7 @@ return {
         close_if_last_window = true,
         popup_border_style = "rounded",
         window = {
-          position = "float"
+          position = "right"
         },
         filesystem = {
           filtered_items = {
@@ -30,7 +30,8 @@ return {
         function()
           require("neo-tree.command").execute({
             toggle = true,
-            position = "float",
+            position = "right",
+            reveal = true,
           })
         end,
         "Show file explorer"
