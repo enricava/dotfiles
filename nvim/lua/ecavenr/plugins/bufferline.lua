@@ -21,10 +21,9 @@ return {
   -- Highlight similar words and current line
   {
     "yamatsum/nvim-cursorline",
-    event = "VeryLazy",
     opts = {
       cursorline = {
-        enable = true,
+        enable = false,
         timeout = 1000,
         number = false,
       },
