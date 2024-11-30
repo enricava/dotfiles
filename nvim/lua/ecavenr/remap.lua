@@ -16,8 +16,7 @@ map("n", "<C-l>", "<C-W>l", "Switch window right")
 map("n", "<C-a>", "gg<S-v>G", "Select all")
 
 -- Save with Ctrl+S
-map("n", "<C-s>", ":w<CR>", "Save file")
-map("i", "<C-s>", "<Esc>:w<CR>", "Save file")
+map({'n', 'v', 'i'}, "<C-s>", "<Esc>:w<CR>", "Save file")
 
 -- Exit with Alt+4
 map("n", "<A-4>", ":q<CR>", "Exit vim")
