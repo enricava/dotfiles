@@ -85,6 +85,7 @@ local docker_gdb = {
 
   sourceFileMap = {
     ['.'] = '${workspaceFolder}',
+    ['raas'] = '${workspaceFolder}/raas',
   },
 
   environment = {
