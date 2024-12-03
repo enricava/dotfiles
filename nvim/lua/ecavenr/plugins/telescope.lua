@@ -1,7 +1,14 @@
-local map = require("ecavenr.keys").map
+local function grep_selection()
+  require("telescope-live-grep-args.shortcuts").grep_visual_selection()
+end
+
+local function grep_word_under_cursor()
+  require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()
+end
 
 return {
-  { 'nvim-telescope/telescope-fzf-native.nvim',
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
     build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
     event = "VeryLazy",
   },
@@ -9,8 +16,23 @@ return {
     "nvim-telescope/telescope.nvim",
     event = "VeryLazy",
 
+    keys = {
+      { "<leader>ff", "<CMD>Telescope find_files<CR>",                    desc = "Find files",                            mode = "n" },
+      { "<leader>fg", "<CMD>Telescope git_files<CR>",                     desc = "Find in git files",                     mode = "n" },
+      { "<leader>fb", "<CMD>Telescope buffers<CR>",                       desc = "Buffers",                               mode = "n" },
+      { "<leader>fa", "<CMD>Telescope find_files<CR>",                    desc = "Find all files",                        mode = "n" },
+      { "<leader>fo", "<CMD>Telescope oldfiles<CR>",                      desc = "Find recent files",                     mode = "n" },
+      { "<leader>fl", "<CMD>Telescope flutter commands<CR>",              desc = "Show flutter commands",                 mode = "n" },
+      { "<leader>fr", "<CMD>Telescope lsp_references<CR>",                desc = "LSP References",                        mode = "n" },
+      { "<leader>cc", "<CMD>Telescope colorscheme<CR>",                   desc = "Change colorscheme",                    mode = "n" },
+
+      { "<C-f>",      "<CMD>Telescope live_grep_args live_grep_args<CR>", desc = "Live grep (with args)",                 mode = "n" },
+      { "<C-f>",      grep_selection,                                     desc = "Live grep visual selection(with args)", mode = "v" },
+      { "<leader>fc", grep_word_under_cursor,                             desc = "Live grep word (withargs)",             mode = "n" },
+    },
+
     dependencies = {
-      "nvim-telescope/telescope-live-grep-args.nvim" ,
+      "nvim-telescope/telescope-live-grep-args.nvim",
     },
 
     config = function()
@@ -28,30 +50,14 @@ return {
         },
         extensions = {
           fzf = {
-            fuzzy = true,             -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
           }
         }
       })
-      -- Telescope mappings
-      map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", "Find files")
-      map("n", "<leader>fg", "<CMD>Telescope git_files<CR>", "Find in git files")
-      map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Buffers")
-      map("n", "<leader>fa", "<CMD>Telescope find_files<CR>", "Find all files")
-      map("n", "<leader>fo", "<CMD>Telescope oldfiles<CR>", "Find recent files")
-      map("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", "Show flutter commands")
-      map("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", "LSP References")
-      map("n", "<leader>cc", "<CMD>Telescope colorscheme<CR>", "Change colorscheme")
-
-      -- Live grep args
-      local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
-      map("n", "<C-f>", "<CMD>Telescope live_grep_args live_grep_args<CR>", "Live grep (with args)")
-      map("v", "<C-f>", live_grep_args_shortcuts.grep_visual_selection, "Live grep visual selection (with args)")
-      map("n", "<leader>fc", live_grep_args_shortcuts.grep_word_under_cursor, "Live grep word (with args)")
-
       -- Telescope extensions
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('live_grep_args')
@@ -62,11 +68,10 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>ft", "<CMD>TodoTelescope<CR>", desc = "Find todos", mode = "n" }
+    },
     opts = {},
-    config = function()
-      require("todo-comments").setup()
-      map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", "Find todos")
-    end
   }
 
 }

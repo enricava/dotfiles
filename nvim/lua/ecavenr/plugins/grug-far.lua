@@ -1,8 +1,8 @@
-local map = require("ecavenr.keys").map
-map("n", "<leader>fm", "<CMD>GrugFar<CR>", "Find and replace")
-
 return {
   'MagicDuck/grug-far.nvim',
   event = "VeryLazy",
+  keys = {
+    { "<leader>fm", "<CMD>GrugFar<CR>", desc = "Find and replace", mode = "n" },
+  },
   opts = {}
 }

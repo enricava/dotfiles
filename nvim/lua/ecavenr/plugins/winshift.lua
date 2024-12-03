@@ -1,9 +1,9 @@
-local map = require("ecavenr.keys").map
-map("n", "<leader>w", "<cmd>WinShift<cr>", "Start winshift mode")
-
 return {
   'sindrets/winshift.nvim',
   event = "VeryLazy",
+  keys = {
+    { "<leader>w", "<cmd>WinShift<cr>", desc = "Start winshift mode", mode = "n" },
+  },
   opts = {
     keymaps = {
       disable_defaults = false,

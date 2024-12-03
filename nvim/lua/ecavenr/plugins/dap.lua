@@ -3,6 +3,13 @@ return {
   {
     "mfussenegger/nvim-dap",
     event = "VeryLazy",
+    keys = {
+      { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Add breakpoint in line",   mode = "n" },
+      { "<leader>dr", "<cmd>DapContinue<cr>",         desc = "Start/continue debugging", mode = "n" },
+      { "<leader>dc", "<cmd>DapContinue<cr>",         desc = "Start/continue debugging", mode = "n" },
+      { "<leader>di", "<cmd>DapStepInto<cr>",         desc = "Step into",                mode = "n" },
+      { "<leader>do", "<cmd>DapStepOver<cr>",         desc = "Step over",                mode = "n" },
+    },
     config = function()
       require('ecavenr.dapconfig')
     end
@@ -27,6 +34,9 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
+    keys = {
+      { "<leader>dk", "<cmd>lua require('dapui').eval()<cr>", desc = "Eval value", mode = "n" },
+    },
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
       local dap = require("dap")
@@ -41,9 +51,6 @@ return {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-
-      local map = require("ecavenr.keys").map
-      map("n", "<leader>dk", "<cmd>lua require('dapui').eval()<cr>", "Eval value")
     end
   }
 }

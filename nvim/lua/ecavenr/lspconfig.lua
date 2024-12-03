@@ -1,15 +1,6 @@
-local map = require("ecavenr.keys").map
 local lsp_zero = require('lsp-zero')
 
-local lsp_attach = function(client, bufnr)
-  map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", "Code Rename")
-  map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions")
-  map("n", "<leader>cf", vim.lsp.buf.format, "Code Format")
-  map("v", "<leader>cf", vim.lsp.buf.format, "Code Format")
-  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "View References")
-  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "View definition")
-  map("n", "gv", "<cmd>:vsplit | wincmd w | lua vim.lsp.buf.definition()<cr>", "Split window and view definition")
-
+local lsp_attach = function(_, bufnr)
   lsp_zero.default_keymaps({ buffer = bufnr })
 end
 

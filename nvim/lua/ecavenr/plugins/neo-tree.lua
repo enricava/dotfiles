@@ -10,22 +10,8 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    config = function()
-      require("neo-tree").setup({
-        close_if_last_window = true,
-        popup_border_style = "rounded",
-        window = {
-          position = "right"
-        },
-        filesystem = {
-          filtered_items = {
-            visible = true,
-          },
-        },
-      })
-      local map = require("ecavenr.keys").map
-      map(
-        { "n", "v" },
+    keys = {
+      {
         "<C-e>",
         function()
           require("neo-tree.command").execute({
@@ -34,8 +20,21 @@ return {
             reveal = true,
           })
         end,
-        "Show file explorer"
-      )
-    end,
+        desc = "Toggle file explorer",
+        mode = { "n", "v", },
+      },
+    },
+    opts = {
+      close_if_last_window = true,
+      popup_border_style = "rounded",
+      window = {
+        position = "right"
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
+    },
   },
 }

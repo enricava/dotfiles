@@ -13,6 +13,20 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
     },
+    keys = {
+      { "<leader>cr", vim.lsp.buf.rename,      desc = "Code Rename",     mode = "n" },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Actions",    mode = "n" },
+      { "<leader>cf", vim.lsp.buf.format,      desc = "Code Format",     mode = "n" },
+      { "<leader>cf", vim.lsp.buf.format,      desc = "Code Format",     mode = "v" },
+      { "gr",         vim.lsp.buf.references,  desc = "View References", mode = "n" },
+      { "gd",         vim.lsp.buf.definition,  desc = "View definition", mode = "n" },
+      {
+        "gv",
+        "<cmd>:vsplit | wincmd w | lua vim.lsp.buf.definition()<cr>",
+        desc = "Split window and view definition",
+        mode = "n",
+      },
+    },
     config = function()
       require("ecavenr.lspconfig")
     end

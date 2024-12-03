@@ -44,11 +44,10 @@ return {
     -- Cool history view
     {
         "sindrets/diffview.nvim",
-        config = function()
-            local map = require("ecavenr.keys").map
-            map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", "Open diff view")
-            map("n", "<leader>gl", "<cmd>DiffviewFileHistory<cr>", "Open file history view")
-            map("n", "<leader>gc", "<cmd>DiffviewClose<cr>", "Close diff view")
-        end
-    }
+        keys = {
+            { "<leader>gd", "<cmd>DiffviewOpen<cr>",        desc = "Open diff view",         mode = "n" },
+            { "<leader>gl", "<cmd>DiffviewFileHistory<cr>", desc = "Open file history view", mode = "n" },
+            { "<leader>gc", "<cmd>DiffviewClose<cr>",       desc = "Close diff view",        mode = "n" },
+        },
+    },
 }
