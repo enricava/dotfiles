@@ -11,8 +11,6 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.incsearch = true
-
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
@@ -23,10 +21,21 @@ vim.opt.colorcolumn = {}
 vim.opt.updatetime = 50
 
 -- Folding
-vim.opt.fillchars = { fold = " " }
 vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
+vim.opt.fillchars = {
+  fold = " ",
+  foldopen = "",
+  foldclose = "",
+}
+
+-- Search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+
+vim.opt.showmode = false
 
 -- Clipboard
 vim.g.clipboard = {
