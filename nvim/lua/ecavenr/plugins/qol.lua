@@ -8,7 +8,8 @@ return {
 
   -- Remove spaces to the right, but only on modified lines
   {
-    'thirtythreeforty/lessspace.vim'
+    'thirtythreeforty/lessspace.vim',
+    event = 'VeryLazy',
   },
 
   -- Surround text easily

@@ -1,7 +1,6 @@
 return {
   'akinsho/toggleterm.nvim',
   version = "*",
-  event = "VeryLazy",
   opts = {},
   keys = {
     { "<C-w>t", "<CMD>ToggleTerm size=80 direction=vertical<CR>", "Toggle terminal",          mode = "n" },

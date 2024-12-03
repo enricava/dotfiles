@@ -2,7 +2,6 @@ return {
   -- Debug Adapter
   {
     "mfussenegger/nvim-dap",
-    event = "VeryLazy",
     keys = {
       { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Add breakpoint in line",   mode = "n" },
       { "<leader>dr", "<cmd>DapContinue<cr>",         desc = "Start/continue debugging", mode = "n" },
@@ -23,7 +22,6 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
-
     },
     opts = {
       handlers = {},
