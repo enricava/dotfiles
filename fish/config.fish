@@ -7,6 +7,7 @@ fish_add_path /usr/local/android-studio/bin
 fish_add_path /usr/bin/flutter/bin
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.pub-cache/bin
 
 set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
