@@ -70,6 +70,7 @@ dap.adapters.dart = {
 -- Debug configurations
 local docker_gdb = {
   name = '󰡨 Debug through docker',
+  command = 'gdb',
   type = 'cppdbg',
   request = 'launch',
   MIMode = 'gdb',

@@ -11,21 +11,22 @@ return {
     },
     config = function()
       require('ecavenr.dapconfig')
-    end
-  },
-
-  -- Close gap between mason and mason-nvim-dap
-  -- cpptools works well
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    event = "VeryLazy",
+    end,
     dependencies = {
-      "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
-    },
-    opts = {
-      handlers = {},
-    },
+      -- Close gap between mason and mason-nvim-dap
+      -- cpptools works well
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        event = "VeryLazy",
+        dependencies = {
+          "williamboman/mason.nvim",
+        },
+        opts = {
+          handlers = {},
+        },
+      },
+
+    }
   },
 
   -- Ui for nvim-dap
