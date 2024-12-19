@@ -8,7 +8,7 @@ Dear future me, I did not track all of the dependencies, but some are:
 - `fzf`, `ripgrep`, `fd`
 - `npm`
 - `clang`, use it to build a nvim telescope extension
-- `go`
+- `go` install `delve` for dap config
 - `rust`
 - `python` - needs `venv` to be installed
 
