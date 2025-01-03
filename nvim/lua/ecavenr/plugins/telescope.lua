@@ -43,6 +43,7 @@ return {
           },
         },
         defaults = {
+          layout_strategy = 'vertical',
           cache_picker = {
             num_pickers = 4,
             ignore_empty_prompt = true,
