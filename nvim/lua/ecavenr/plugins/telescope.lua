@@ -25,6 +25,7 @@ return {
       { "<leader>fl", "<CMD>Telescope flutter commands<CR>",              desc = "Show flutter commands",                 mode = "n" },
       { "<leader>fr", "<CMD>Telescope lsp_references<CR>",                desc = "LSP References",                        mode = "n" },
       { "<leader>cc", "<CMD>Telescope colorscheme<CR>",                   desc = "Change colorscheme",                    mode = "n" },
+      { "<leader>tm", "<CMD>Telescope marks<CR>",                         desc = "Find marks",                            mode = "n" },
 
       { "<C-f>",      "<CMD>Telescope live_grep_args live_grep_args<CR>", desc = "Live grep (with args)",                 mode = "n" },
       { "<C-f>",      grep_selection,                                     desc = "Live grep visual selection(with args)", mode = "v" },
