@@ -10,8 +10,13 @@ return {
   keys = {
     {
       "<leader>td",
+      vim.diagnostic.open_float,
+      desc = "Toggle floating diagnostic",
+    },
+    {
+      "<leader>tf",
       "<cmd>Trouble diagnostics toggle focus=true<cr>",
-      desc = "Toggle trouble diagnostics",
+      desc = "Toggle diagnostics quickfix list",
     },
     {
       "<leader>ts",
