@@ -26,6 +26,13 @@ return {
     opts = {},
   },
 
+  -- using packer.nvim
+  {
+    'nmac427/guess-indent.nvim',
+    event = 'BufEnter',
+    config = function() require('guess-indent').setup({}) end,
+  },
+
   -- Vertical lines on indents
   {
     'lukas-reineke/indent-blankline.nvim',
