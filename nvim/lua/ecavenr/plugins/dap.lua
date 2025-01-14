@@ -10,6 +10,8 @@ return {
       { "<leader>do", "<cmd>DapStepOver<cr>",         desc = "Step over",                mode = "n" },
     },
     config = function()
+      require("mason")
+      require("mason-nvim-dap")
       require('ecavenr.dapconfig')
     end,
     dependencies = {
@@ -17,7 +19,6 @@ return {
       -- cpptools works well
       {
         "jay-babu/mason-nvim-dap.nvim",
-        event = "VeryLazy",
         dependencies = {
           "williamboman/mason.nvim",
         },
