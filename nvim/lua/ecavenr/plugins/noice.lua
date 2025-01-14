@@ -26,6 +26,7 @@ return {
     --   If not available, we use `mini` as the fallback
     {
       "rcarriga/nvim-notify",
+      enabled = false,
       opts = {
         stages = "static",
         top_down = false,
