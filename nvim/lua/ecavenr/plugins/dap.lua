@@ -54,11 +54,11 @@ return {
     end
   },
 
-  {
-    "leoluz/nvim-dap-go",
-    name = 'dap-go',
-    config = function()
-      require('dap-go').setup()
-    end
-  }
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   name = 'dap-go',
+  --   config = function()
+  --     require('dap-go').setup()
+  --   end
+  -- }
 }
