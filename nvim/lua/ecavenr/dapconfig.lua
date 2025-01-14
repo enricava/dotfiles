@@ -61,12 +61,6 @@ dap.adapters.gdb = {
   args = { '--interpreter=dap', '--eval-command', 'set print pretty on' }
 }
 
-dap.adapters.cppdbg = {
-  type = 'executable',
-  command = 'gdb',
-  args = { '--interpreter=dap', '--eval-command', 'set print pretty on' }
-}
-
 dap.adapters.dart = {
   type = "executable",
   command = "flutter",
