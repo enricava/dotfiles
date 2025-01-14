@@ -125,3 +125,5 @@ dap.configurations.dart = {
     program = "${relativeFile}",
   },
 }
+
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
