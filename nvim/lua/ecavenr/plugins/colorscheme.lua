@@ -17,11 +17,11 @@ return {
                         conditionals = "NONE",
                         constants = "NONE",
                         functions = "NONE",
-                        keywords = "NONE",
+                        keywords = "bold",
                         numbers = "NONE",
                         operators = "NONE",
                         strings = "NONE",
-                        types = "bold",
+                        types = "NONE",
                         variables = "NONE",
                     },
                     inverse = { -- Inverse highlight for different types
@@ -39,7 +39,7 @@ return {
             })
 
             -- setup must be called before loading
-            vim.cmd("colorscheme nightfox")
+            vim.cmd("colorscheme carbonfox")
 
             -- fix ugly telescope borders
             vim.cmd 'highlight TelescopeBorder guibg=none'
