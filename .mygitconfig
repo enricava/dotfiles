@@ -8,3 +8,5 @@
   sw = switch
 [core]
 	editor = nvim
+[pull]
+	rebase = true
