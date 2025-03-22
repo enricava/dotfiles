@@ -20,8 +20,8 @@ fish_add_path /opt/homebrew/opt/openjdk/bin
 set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
 
 # MacOs Shenanigans
-fish_add_path /Library/Developer/CommandLineTools/usr/bin
-set -gx LIBRARY_PATH "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
+# fish_add_path /Library/Developer/CommandLineTools/usr/bin
+# set -gx LIBRARY_PATH "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
 
 set -x N_PREFIX "$HOME/n"
 contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
