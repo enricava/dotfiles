@@ -1,1 +1,7 @@
+[[language]]
+name = "c"
+formatter = { command = "clang-format"}
 
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format"}
