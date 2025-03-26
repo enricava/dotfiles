@@ -1,12 +1,12 @@
 [alias]
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | sort
-  br = branch
+	br = branch
 	cram = commit --amend --no-edit
-  diffst = diff --staged
+	diffst = diff --staged
 	slog = log --oneline -n 10
-  st = status
-  sw = switch
+	st = status
+	sw = switch
 [core]
-	editor = nvim
+	editor = hx
 [pull]
 	rebase = true
