@@ -12,7 +12,7 @@ fish_add_path $HOME/.pub-cache/bin
 set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if status is-interactive
-    set -gx EDITOR nvim
+    set -gx EDITOR hx
 
     alias l "ls -la"
     alias ll "ls -la"
