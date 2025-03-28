@@ -14,10 +14,14 @@ normal = "block"
 select = "underline"
 
 [keys.normal]
+# Window handling
 C-h = "jump_view_left"
 C-j = "jump_view_down"
 C-k = "jump_view_up"
 C-l = "jump_view_right"
+
+# File handling
+C-s = ":write"
 
 [keys.normal.space]
 e = "file_picker_in_current_buffer_directory"
