@@ -13,6 +13,9 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.pub-cache/bin
 fish_add_path $HOME/go/bin
 
+# xcode cli tools
+fish_add_path /Library/Developer/CommandLineTools/usr/bin/
+
 set -x N_PREFIX "$HOME/n"
 contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
 
