@@ -21,3 +21,12 @@ C-l = "jump_view_right"
 
 [keys.normal.space]
 e = "file_picker_in_current_buffer_directory"
+
+[keys.normal.backspace]
+t = ":run-shell-command zellij action toggle-floating-panes"
+g = ":run-shell-command zellij run -ic -- lazygit"
+q = ":quit"
+w = ":set whitespace.render all"
+W = ":set whitespace.render none"
+s = ":set soft-wrap.enable true"
+S = ":set soft-wrap.enable false"
