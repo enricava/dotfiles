@@ -167,7 +167,7 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Esc" "Alt `" { SwitchToMode "Locked"; }
         bind "Alt q" { Quit; }
-        bind "Alt f" { ToggleFloatingPanes; }
+        bind "f" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
@@ -180,22 +180,22 @@ keybinds clear-defaults=true {
         bind "Enter" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Alt r" { SwitchToMode "Resize"; }
+        bind "r" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
-        bind "Alt s" { SwitchToMode "Scroll"; }
+        bind "s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        bind "Alt w" { SwitchToMode "Session"; }
+        bind "w" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Alt t" { SwitchToMode "Tab"; }
+        bind "t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Alt m" { SwitchToMode "Move"; }
+        bind "m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
