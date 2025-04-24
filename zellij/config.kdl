@@ -179,22 +179,22 @@ keybinds clear-defaults=true {
     shared_except "normal" "locked" {
         bind "Enter" { SwitchToMode "Normal"; }
     }
-    shared_except "pane" "locked" "renametab" "renamepane" {
+    shared_except "pane" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "p" { SwitchToMode "Pane"; }
     }
-    shared_except "resize" "locked" "renametab" "renamepane" {
+    shared_except "resize" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "r" { SwitchToMode "Resize"; }
     }
-    shared_except "scroll" "locked" "renametab" "renamepane" {
+    shared_except "scroll" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "s" { SwitchToMode "Scroll"; }
     }
-    shared_except "session" "locked" "renametab" "renamepane" {
+    shared_except "session" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "w" { SwitchToMode "Session"; }
     }
-    shared_except "tab" "locked" "renametab" "renamepane" {
+    shared_except "tab" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "t" { SwitchToMode "Tab"; }
     }
-    shared_except "move" "locked" "renametab" "renamepane" {
+    shared_except "move" "locked" "renametab" "renamepane" "EnterSearch" {
         bind "m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
