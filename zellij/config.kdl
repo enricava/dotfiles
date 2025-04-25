@@ -6,6 +6,7 @@ keybinds clear-defaults=true {
     }
     locked {
         bind "Alt `" { SwitchToMode "Normal"; }
+        bind "Alt f" { ToggleFocusFullscreen; }
     }
     resize {
         bind "Alt r" { SwitchToMode "Normal"; }
