@@ -4,13 +4,17 @@ Dear future me, I did not track all of the dependencies, but some are:
 
 - `fish`
 - `zellij`
-- `nvim 0.10.0`
-- `fzf`, `ripgrep`, `fd`
-- `npm`
-- `clang`, use it to build a nvim telescope extension
+- `fzf`, `ripgrep`, `fd` - nice to haves.
 - `go` install `delve` for dap config
-- `rust`
-- `python` - needs `venv` to be installed
+- `rust`.
+
+Neovim only:
+
+- `nvim 0.10.0`
+- `python` - needs `venv` to be installed.
+- `clang` - use it to build a nvim telescope extension (probably already
+have it anyway)
+- `npm`
 
 In `Mason`, `markdownlint` needs to be installed.
 
