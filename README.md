@@ -7,6 +7,7 @@ Dear future me, I did not track all of the dependencies, but some are:
 - `fzf`, `ripgrep`, `fd` - nice to haves.
 - `go` install `delve` for dap config
 - `rust`.
+- `git-delta` - for git diff previews.
 
 Neovim only:
 

@@ -10,3 +10,19 @@
 	editor = hx
 [pull]
 	rebase = true
+
+# Git delta stuff
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+	side-by-side = true
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+	hyperlinks = true
+
+[merge]
+    conflictstyle = zdiff3
