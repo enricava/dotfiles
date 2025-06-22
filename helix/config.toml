@@ -1,7 +1,7 @@
 theme = "dark_plus"
 
 [editor]
-bufferline = "multiple"
+# bufferline = "multiple"
 line-number = "relative"
 true-color = true
 end-of-line-diagnostics = "hint"
