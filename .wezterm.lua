@@ -4,6 +4,8 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.line_height = .8
+
 config.hide_tab_bar_if_only_one_tab = true
 
 config.adjust_window_size_when_changing_font_size = false
