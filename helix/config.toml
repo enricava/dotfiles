@@ -1,7 +1,7 @@
 theme = "catppuccin_mocha"
 
 [editor]
-# bufferline = "multiple"
+bufferline = "multiple"
 line-number = "relative"
 true-color = true
 end-of-line-diagnostics = "hint"
@@ -21,6 +21,8 @@ C-k = "jump_view_up"
 C-l = "jump_view_right"
 C-r = ":reload-all"
 A-w = ":write"
+L = ":buffer-next"
+H = ":buffer-previous"
 
 [keys.normal.backspace]
 t = ":run-shell-command zellij action toggle-floating-panes"
