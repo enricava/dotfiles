@@ -13,6 +13,12 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.pub-cache/bin
 fish_add_path $HOME/go/bin
 
+fish_add_path /opt/homebrew/bin/
+
+# Openjdk
+fish_add_path /opt/homebrew/opt/openjdk/bin
+set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
+
 # MacOs Shenanigans
 fish_add_path /Library/Developer/CommandLineTools/usr/bin
 set -gx LIBRARY_PATH "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
