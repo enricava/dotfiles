@@ -7,3 +7,4 @@ ln -s ~/dotfiles/.wezterm.lua ~/.wezterm.lua
 ln -s ~/dotfiles/yazi ~/.config/yazi
 ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
 ln -s ~/dotfiles/helix/languages.toml ~/.config/helix/languages.toml
+ln -s ~/dotfiles/helix/themes ~/.config/helix/themes

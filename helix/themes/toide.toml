@@ -1,0 +1,5 @@
+inherits = "kanagawa"
+
+"ui.gutter" = { fg = "fujiWhite", bg = "sumiInk3" }
+"comment" = { fg = "sumiInk6", modifiers = ["italic"] }
+"variable" = "waveAqua2"
