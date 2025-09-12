@@ -4,6 +4,8 @@ theme = "toide" # catppuccin_mocha
 bufferline = "multiple"
 line-number = "relative"
 true-color = true
+idle-timeout = 0 # instant completion
+completion-trigger-len = 1
 end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
