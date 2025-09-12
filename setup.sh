@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 ln -s ~/dotfiles/fish ~/.config/fish
 ln -s ~/dotfiles/zellij ~/.config/zellij
 ln -s ~/dotfiles/nvim ~/.config/nvim
