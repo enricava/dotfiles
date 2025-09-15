@@ -2,12 +2,12 @@
 
 set -e
 
-ln -s ~/dotfiles/fish ~/.config/fish
-ln -s ~/dotfiles/zellij ~/.config/zellij
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/dotfiles/.wezterm.lua ~/.wezterm.lua
-ln -s ~/dotfiles/yazi ~/.config/yazi
-ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
-ln -s ~/dotfiles/helix/languages.toml ~/.config/helix/languages.toml
-ln -s ~/dotfiles/helix/themes ~/.config/helix/themes
+# -Tsf directly replaces the destintation.
+
+ln -Tsf ~/dotfiles/fish ~/.config/fish
+ln -Tsf ~/dotfiles/zellij ~/.config/zellij
+ln -Tsf ~/dotfiles/nvim ~/.config/nvim
+ln -Tsf ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -Tsf ~/dotfiles/.wezterm.lua ~/.wezterm.lua
+ln -Tsf ~/dotfiles/yazi ~/.config/yazi
+ln -Tsf ~/dotfiles/helix ~/.config/helix
