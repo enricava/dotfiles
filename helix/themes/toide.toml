@@ -1,5 +1,15 @@
 inherits = "kanagawa"
 
-"ui.gutter" = { fg = "fujiWhite", bg = "sumiInk3" }
+"ui.background" = {}
+
+"ui.bufferline" = { fg = "fujiGray" }
+"ui.bufferline.active" = { fg = "oldWhite" }
+"ui.bufferline.background" = {}
+
+"ui.gutter" = {}
+
+"ui.menu" = { fg = "oldWhite" }
+"ui.menu.selected" = { fg = "fujiWhite", bg = "waveBlue2" , modifiers = ["bold"] }
+
 "comment" = { fg = "sumiInk6", modifiers = ["italic"] }
 "variable" = "waveAqua2"
