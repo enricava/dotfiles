@@ -29,6 +29,7 @@ H = ":buffer-previous"
 [keys.normal.backspace]
 t = ":run-shell-command zellij action toggle-floating-panes"
 g = ":run-shell-command zellij run -ic -- lazygit"
+y = ":run-shell-command zellij run -ic -- yazi $PWD"
 q = ":quit"
 w = ":toggle whitespace.render all none"
 r = ":toggle rulers [80,120] []"
