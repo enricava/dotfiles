@@ -15,22 +15,8 @@ if status is-interactive
     set -gx EDITOR hx
 
     alias l "ls -la"
-    alias ll "ls -la"
-
-    alias dotfiles "cd $DOTFILES"
-    alias myrepos "cd $MY_REPOS"
-
-    alias v 'nvim'
-    alias vim 'nvim'
-
-    function y
-      set tmp (mktemp -t "yazi-cwd.XXXXXX")
-      yazi $argv --cwd-file="$tmp"
-      if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-      end
-      rm -f -- "$tmp"
-    end
+    alias v nvim
+    alias vim nvim
 
     starship init fish | source
     fzf --fish | source
