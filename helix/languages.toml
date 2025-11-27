@@ -2,6 +2,7 @@
 name = "c"
 formatter = { command = "clang-format"}
 language-servers = ["clangd", "harper-ls"]
+auto-format = true
 
 [[language]]
 name = "cpp"
