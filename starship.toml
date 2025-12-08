@@ -3,6 +3,8 @@
 format = """
 $directory\
 $git_branch\
+$git_commit\
+$git_state\
 $git_status\
 $c\
 $rust\
@@ -13,6 +15,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
+$dart\
 $jobs\
 $line_break\
 $character"""
@@ -23,6 +26,7 @@ palette = 'gruvbox_dark'
 color_fg0 = '#d7af87'
 color_fg1 = '#c34043'
 color_blue = '#7e9cd8'
+color_blue_dark = '#192c52'
 color_aqua = '#689d6a'
 color_green = '#98971a'
 color_orange = '#d65d0e'
@@ -44,10 +48,17 @@ truncation_length = 3
 
 [git_branch]
 symbol = ""
-format = '[[ $symbol $branch ](fg:color_blue)]($style)'
+format = '[[$symbol $branch](fg:color_blue)]($style)'
 
 [git_status]
+ignore_submodules = true
 format = '[[($all_status$ahead_behind)](fg:color_blue)]($style)'
+
+[git_state]
+format = '[[\($state( $progress_current/$progress_total)\)](fg:color_blue_dark)]($style)'
+
+[git_commit]
+format = '[[\($hash$tag\)](fg:color_blue_dark)]($style)'
 
 [nodejs]
 symbol = ""
@@ -91,6 +102,10 @@ format = '[[ $symbol( $context) ](fg:#83a598)]($style)'
 
 [conda]
 format = '[[ $symbol( $environment) ](fg:#83a598)]($style)'
+
+[dart]
+symbol = " "
+format = '[[ $symbol( $version) ](fg:color_aqua)]($style)'
 
 [time]
 disabled = false
