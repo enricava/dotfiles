@@ -24,4 +24,6 @@ config.keys = {
   },
 }
 
+config.font = wezterm.font 'Iosevka Term'
+
 return config
