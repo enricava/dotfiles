@@ -105,7 +105,7 @@ format = '[[ $symbol( $environment) ](fg:#83a598)]($style)'
 
 [dart]
 symbol = " "
-format = '[[ $symbol( $version) ](fg:color_aqua)]($style)'
+format = '[[ $symbol ](fg:color_aqua)]($style)'
 
 [time]
 disabled = false
