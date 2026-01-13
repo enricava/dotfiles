@@ -10,6 +10,13 @@ auto-format = true
 name = "typescript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
+roots = ["tsconfig.json"]
+language-servers = ["typescript-language-server", "angular-ls"]
+
+[[language]]
+name ="html"
+roots = ["angular.json"]
+language-servers = ["angular-ls","vscode-html-language-server"]
 
 [[language]]
 name = "typst"
@@ -18,3 +25,14 @@ language-servers = ["tinymist"]
 [language-server.tinymist]
 command = "tinymist"
 config = { preview.background.enabled = true, preview.background.args = ["--data-plane-host=127.0.0.1:0", "--invert-colors=never", "--open"], exportPdf = "onSave"}
+
+[language-server.angular-ls]
+command = "ngserver"
+args = [
+  "--stdio",
+  "--ngProbeLocations",
+  "/Users/toide/.local/share/nvm/v22.11.0/lib/node_modules", # npm -g root
+  "--tsProbeLocations",
+  "/Users/toide/.local/share/nvm/v22.11.0/lib/node_modules" # npm -g root
+]
+file-types = ["ts", "typescript", "html"]
