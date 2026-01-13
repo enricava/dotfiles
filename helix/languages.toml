@@ -36,9 +36,9 @@ command = "ngserver"
 args = [
   "--stdio",
   "--ngProbeLocations",
-  "TODO", # npm -g root
+  "/Users/toide/.local/share/nvm/v22.11.0/lib/node_modules", # npm -g root
   "--tsProbeLocations",
-  "TODO" # npm -g root
+  "/Users/toide/.local/share/nvm/v22.11.0/lib/node_modules" # npm -g root
 ]
 file-types = ["ts", "typescript", "html"]
 
