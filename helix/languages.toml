@@ -17,6 +17,7 @@ language-servers = ["typescript-language-server", "angular-ls"]
 name ="html"
 roots = ["angular.json"]
 language-servers = ["angular-ls","vscode-html-language-server"]
+auto-format = false
 
 [[language]]
 name = "typst"
