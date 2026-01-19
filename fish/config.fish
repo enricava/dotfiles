@@ -35,7 +35,7 @@ if status is-interactive
 
     starship init fish | source
     fzf --fish | source
-    nvm -s use 22.11.0
+    nvm -s use 22.12.0
 
     # Helix configuration for node modules
     set -gx NODE_MODULES_GLOBAL (npm -g root)
