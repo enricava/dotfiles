@@ -12,6 +12,7 @@ fish_add_path /usr/local/go/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.pub-cache/bin
 fish_add_path $HOME/go/bin
+fish_add_path /Applications/Obsidian.app/Contents/MacOS
 
 fish_add_path /opt/homebrew/bin/
 
