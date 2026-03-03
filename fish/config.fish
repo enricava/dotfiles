@@ -1,6 +1,3 @@
-set -gx DOTFILES "$HOME/dotfiles"
-set -gx MY_REPOS "$HOME/repos/enricava"
-
 set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$HOME/go/bin"
 
