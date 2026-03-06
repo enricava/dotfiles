@@ -3,9 +3,14 @@
 	br = branch
 	cram = commit --amend --no-edit
 	diffst = diff --staged
+	discard = checkout --
+	log-file = log -p --follow --
+	nevermind = !git reset --hard HEAD && git clean -d -f
 	slog = log --oneline -n 10
 	st = status
 	sw = switch
+	uncommit = reset --mixed HEAD~
+	unstage = reset -q HEAD --
 [core]
 	editor = hx
 [pull]
