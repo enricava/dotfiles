@@ -30,5 +30,6 @@ config.keys = {
 }
 
 config.font = wezterm.font 'Iosevka Term'
+config.front_end = "WebGpu"
 
 return config
