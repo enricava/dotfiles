@@ -4,7 +4,7 @@ function repos
         return 1
     end
 
-    set -l repo (fd --type directory --hidden --max-depth 5 '^\.git$' $WORKSPACE \
+    set -l repo (fd --hidden --max-depth 5 '^\.git$' $WORKSPACE \
         | string replace -r '/\.git/?$' '' \
         | string replace "$WORKSPACE/" '' \
         | fzf --bind 'tab:down,shift-tab:up' \
