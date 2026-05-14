@@ -1,7 +1,5 @@
 inherits = "kanagawa"
 
-"ui.background" = {}
-
 "ui.bufferline" = { fg = "fujiGray" }
 "ui.bufferline.active" = { fg = "oldWhite" }
 "ui.bufferline.background" = {}

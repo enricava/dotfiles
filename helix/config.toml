@@ -1,4 +1,4 @@
-theme = "toide" # catppuccin_mocha
+theme = "toide-transparent" # toide, toide-transparent
 
 [editor]
 bufferline = "multiple"
