@@ -13,7 +13,14 @@ fish_add_path /opt/homebrew/bin/
 fish_add_path /opt/homebrew/opt/openjdk/bin
 fish_add_path /Applications/Obsidian.app/Contents/MacOS
 
-set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
+# Added for flutter, cocoapods
+fish_add_path /opt/homebrew/opt/ruby/bin
+set -gx GEM_HOME $HOME/.gem
+fish_add_path $GEM_HOME/bin
+set -gx LDFLAGS -L/opt/homebrew/opt/ruby/lib
+set -gx CPPFLAGS -I/opt/homebrew/opt/ruby/include
+
+set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include $CPPFLAGS
 
 set -x N_PREFIX "$HOME/n"
 contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
