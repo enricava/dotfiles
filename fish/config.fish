@@ -11,6 +11,7 @@ fish_add_path /usr/local/go/bin
 fish_add_path /opt/nvim-linux64/bin
 fish_add_path /opt/homebrew/bin/
 fish_add_path /opt/homebrew/opt/openjdk/bin
+fish_add_path /opt/homebrew/share/google-cloud-sdk/bin
 fish_add_path /Applications/Obsidian.app/Contents/MacOS
 
 # Added for flutter, cocoapods
