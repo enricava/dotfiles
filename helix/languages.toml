@@ -1,19 +1,45 @@
 [[language]]
 name = "c"
 formatter = { command = "clang-format"}
+language-servers = ["clangd", "harper-ls"]
 
 [[language]]
 name = "cpp"
 formatter = { command = "clang-format"}
+language-servers = ["clangd", "harper-ls"]
+
+[[language]]
+name ="html"
+roots = ["angular.json"]
+language-servers = ["angular-ls", "vscode-html-language-server", "harper-ls"]
+auto-format = false
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer", "harper-ls"]
 
 [[language]]
 name = "typescript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
+roots = ["tsconfig.json"]
+language-servers = ["typescript-language-server", "angular-ls", "harper-ls"]
 
 [[language]]
 name = "typst"
-language-servers = ["tinymist"]
+language-servers = ["tinymist", "harper-ls"]
+
+[language-server.angular-ls]
+command = "ngserver"
+args = [
+  "--stdio",
+  "--ngProbeLocations",
+  "TODO", # npm -g root
+  "--tsProbeLocations",
+  "TODO" # npm -g root
+]
+file-types = ["ts", "typescript", "html"]
 
 [language-server.harper-ls]
 command = "harper-ls"
